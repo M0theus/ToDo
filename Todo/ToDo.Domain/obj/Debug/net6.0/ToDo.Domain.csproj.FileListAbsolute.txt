@@ -1,0 +1,14 @@
+/home/matheus/dev/Todo/ToDo.Domain/bin/Debug/net6.0/ToDo.Domain.deps.json
+/home/matheus/dev/Todo/ToDo.Domain/bin/Debug/net6.0/ToDo.Domain.runtimeconfig.json
+/home/matheus/dev/Todo/ToDo.Domain/bin/Debug/net6.0/ToDo.Domain.dll
+/home/matheus/dev/Todo/ToDo.Domain/bin/Debug/net6.0/ref/ToDo.Domain.dll
+/home/matheus/dev/Todo/ToDo.Domain/bin/Debug/net6.0/ToDo.Domain.pdb
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ToDo.Domain.csproj.AssemblyReference.cache
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ToDo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ToDo.Domain.AssemblyInfoInputs.cache
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ToDo.Domain.AssemblyInfo.cs
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ToDo.Domain.csproj.CoreCompileInputs.cache
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ToDo.Domain.dll
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ref/ToDo.Domain.dll
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ToDo.Domain.pdb
+/home/matheus/dev/Todo/ToDo.Domain/obj/Debug/net6.0/ToDo.Domain.genruntimeconfig.cache

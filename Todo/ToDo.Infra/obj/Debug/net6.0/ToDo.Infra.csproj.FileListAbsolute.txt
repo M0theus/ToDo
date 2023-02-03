@@ -1,0 +1,5 @@
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.csproj.AssemblyReference.cache
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.GeneratedMSBuildEditorConfig.editorconfig
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.AssemblyInfoInputs.cache
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.AssemblyInfo.cs
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.csproj.CoreCompileInputs.cache
