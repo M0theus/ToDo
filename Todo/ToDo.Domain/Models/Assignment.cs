@@ -1,3 +1,4 @@
+using ToDo.Core.Exceptions;
 using ToDo.Domain.Validators;
 
 namespace ToDo.Domain.Models;
@@ -38,7 +39,7 @@ public class Assignment : Base //Task
             {
                 _errors.Add(error.ErrorMessage);
 
-                throw new Exception("Alguns campos estão inválidos, por favor corrija-os" + _errors[0]);
+                throw new DomainExceptions("Alguns campos estão inválidos, por favor corrija-os", _errors);
             }
         }
 

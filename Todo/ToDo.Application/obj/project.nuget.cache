@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hklAcofqTEmVCZ93bqQo5ZUuRS7d95Gc6iHHzjrJFcDmVWw1HWjN8yoIajIObnUEhzVIp2pbnhFACipZyNiHOQ==",
+  "dgSpecHash": "zI40CufYBnh8Weo7gjWTqCK6ZqdaLEdVu9LkYO7Ojsi8P5g+5C3OVPGqZ+zFkomxZufAHRee361OaX1k179iFA==",
   "success": true,
   "projectFilePath": "/home/matheus/dev/Todo/ToDo.Application/ToDo.Application.csproj",
   "expectedPackageFiles": [

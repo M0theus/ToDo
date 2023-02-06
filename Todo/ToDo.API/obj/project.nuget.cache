@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cJ6+7WvfwCvaDvUbn169HGYcoVTvn7NCVfrf4bDWLVKjN4iE9p+iAVVMQHFSKJ6MLDu5d4wpTSzk7OkTDO2I1Q==",
+  "dgSpecHash": "twFSDPb5/wJE4Ga+QJGHMHWQaAPOiQ5QrGFXcbYhuLOxWYqkUOl9G2L9RmeGkmpEGrmPASfhhWFcuQ2M+Zb3pg==",
   "success": true,
   "projectFilePath": "/home/matheus/dev/Todo/ToDo.API/ToDo.API.csproj",
   "expectedPackageFiles": [

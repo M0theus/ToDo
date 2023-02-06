@@ -430,6 +430,16 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "ToDo.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ToDo.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToDo.Core.dll": {}
+        }
       }
     }
   },
@@ -1098,6 +1108,11 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "ToDo.Core/1.0.0": {
+      "type": "project",
+      "path": "../ToDo.Core/ToDo.Core.csproj",
+      "msbuildProject": "../ToDo.Core/ToDo.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1108,7 +1123,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Relational >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2",
-      "Pomelo.EntityFrameworkCore.MySql >= 7.0.0"
+      "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
+      "ToDo.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1135,7 +1151,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/matheus/dev/Todo/ToDo.Core/ToDo.Core.csproj": {
+              "projectPath": "/home/matheus/dev/Todo/ToDo.Core/ToDo.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

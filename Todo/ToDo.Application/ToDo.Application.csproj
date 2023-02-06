@@ -26,4 +26,8 @@
       <Compile Remove="Class1.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ToDo.Core\ToDo.Core.csproj" />
+    </ItemGroup>
+
 </Project>

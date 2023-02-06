@@ -431,6 +431,16 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
+      "ToDo.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ToDo.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToDo.Core.dll": {}
+        }
+      },
       "ToDo.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -439,7 +449,8 @@
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.2",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.2",
-          "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
+          "ToDo.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ToDo.Domain.dll": {}
@@ -1115,6 +1126,11 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "ToDo.Core/1.0.0": {
+      "type": "project",
+      "path": "../ToDo.Core/ToDo.Core.csproj",
+      "msbuildProject": "../ToDo.Core/ToDo.Core.csproj"
     },
     "ToDo.Domain/1.0.0": {
       "type": "project",
