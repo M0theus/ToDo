@@ -48,3 +48,7 @@
 /home/matheus/dev/Todo/ToDo.API/obj/Debug/net6.0/ref/ToDo.API.dll
 /home/matheus/dev/Todo/ToDo.API/obj/Debug/net6.0/ToDo.API.pdb
 /home/matheus/dev/Todo/ToDo.API/obj/Debug/net6.0/ToDo.API.genruntimeconfig.cache
+/home/matheus/dev/Todo/ToDo.API/bin/Debug/net6.0/ToDo.Domain.dll
+/home/matheus/dev/Todo/ToDo.API/bin/Debug/net6.0/ToDo.Infra.dll
+/home/matheus/dev/Todo/ToDo.API/bin/Debug/net6.0/ToDo.Infra.pdb
+/home/matheus/dev/Todo/ToDo.API/bin/Debug/net6.0/ToDo.Domain.pdb

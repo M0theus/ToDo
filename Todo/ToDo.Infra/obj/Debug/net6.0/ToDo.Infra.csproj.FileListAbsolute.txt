@@ -3,3 +3,15 @@
 /home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.AssemblyInfoInputs.cache
 /home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.AssemblyInfo.cs
 /home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.csproj.CoreCompileInputs.cache
+/home/matheus/dev/Todo/ToDo.Infra/bin/Debug/net6.0/ToDo.Infra.deps.json
+/home/matheus/dev/Todo/ToDo.Infra/bin/Debug/net6.0/ToDo.Infra.runtimeconfig.json
+/home/matheus/dev/Todo/ToDo.Infra/bin/Debug/net6.0/ToDo.Infra.dll
+/home/matheus/dev/Todo/ToDo.Infra/bin/Debug/net6.0/ref/ToDo.Infra.dll
+/home/matheus/dev/Todo/ToDo.Infra/bin/Debug/net6.0/ToDo.Infra.pdb
+/home/matheus/dev/Todo/ToDo.Infra/bin/Debug/net6.0/ToDo.Domain.dll
+/home/matheus/dev/Todo/ToDo.Infra/bin/Debug/net6.0/ToDo.Domain.pdb
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.csproj.CopyComplete
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.dll
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ref/ToDo.Infra.dll
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.pdb
+/home/matheus/dev/Todo/ToDo.Infra/obj/Debug/net6.0/ToDo.Infra.genruntimeconfig.cache

@@ -12,15 +12,16 @@ public class AssignmentMap : IEntityTypeConfiguration<Assignment>
 
         builder.HasKey(a => a.Id);
 
+        builder.Property(a => a.Id)
+            .IsRequired();
+
         builder.Property(a => a.Name)
             .IsRequired()
             .HasMaxLength(20)
-            .HasColumnName("name")
             .HasColumnType("VARCHAR(20)");
 
         builder.Property(a => a.UserId)
-            .IsRequired()
-            .HasColumnName("userId");
+            .IsRequired();
 
         builder.Property(a => a.Description)
             .IsRequired()

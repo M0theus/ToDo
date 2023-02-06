@@ -12,25 +12,24 @@ public class AssignmentListMap : IEntityTypeConfiguration<AssignmentList>
 
         builder.HasKey(al => al.Id);
 
+        builder.Property(c => c.Id)
+            .IsRequired();
+        
         builder.Property(al => al.Name)
             .IsRequired()
             .HasMaxLength(255)
-            .HasColumnName("name")
             .HasColumnType("VARCHAR(255)");
 
         builder.Property(al => al.Description)
             .IsRequired()
-            .HasColumnName("description")
             .HasMaxLength(255)
             .HasColumnType("VARCHAR(255)");
 
         builder.Property(al => al.UserId)
-            .IsRequired()
-            .HasColumnType("userId");
+            .IsRequired();
 
         builder.HasMany(u => u.Assignments)
             .WithOne(a => a.AssignmentList)
-            .HasForeignKey(a => a.AssignmentListId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

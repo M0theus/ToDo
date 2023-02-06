@@ -13,7 +13,7 @@ public class UserMap : IEntityTypeConfiguration<User>
         builder.HasKey(u => u.Id);
 
         builder.Property(u => u.Id)
-            .HasColumnType("INT");
+            .IsRequired();
 
         builder.Property(u => u.Name)
             .IsRequired()
@@ -35,12 +35,12 @@ public class UserMap : IEntityTypeConfiguration<User>
 
         builder.HasMany(u => u.Assignments)
             .WithOne(a => a.User)
-            .HasForeignKey(a => a.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
-
+            //.HasForeignKey(a => a.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
         builder.HasMany(u => u.AssignmentLists)
             .WithOne(al => al.User)
-            .HasForeignKey(al => al.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+            //.HasForeignKey(al => al.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }
