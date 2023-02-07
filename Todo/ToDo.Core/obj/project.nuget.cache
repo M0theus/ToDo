@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3AEnLgoxk9FoxOPnBT5I+qOSypWvN18ykj2LK9nFYqkHiX/64WcQ03QlC9D23a8m8a33NEGp13p5334IT6d+zw==",
+  "dgSpecHash": "JHNhKOUf5mN6ca9r2rqp0uMJlt9TclD0pKKB87geM8XUfHoJpQXTbK+xdQSw6Wkct+b33pZe8AP1W3WYcdKWgw==",
   "success": true,
-  "projectFilePath": "/home/matheus/dev/Todo/ToDo.Core/ToDo.Core.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
+  "expectedPackageFiles": [
+    "/home/matheus/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/home/matheus/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,6 +1,9 @@
+using AutoMapper;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
 using ToDo.Core.Exceptions;
+using ToDo.Domain.Contracts.Repository;
+using ToDo.Domain.Models;
 
 namespace ToDo.Application.Services;
 
@@ -21,44 +24,81 @@ public class UserService : IUserService
 
         if (userExists != null)
         {
-            throw new DomainExceptions("");
+            throw new DomainExceptions("Já existe um usuário cadastrado com o email informado.");
         }
 
         var user = _mapper.Map<User>(userDto);
         user.Validate(); //validação de dopminio
 
         var userCreated = await _userRepository.Create(user);
-        
-        return _mapper.Map<UserDto>(User)
+
+        return _mapper.Map<UserDto>(userCreated);
     }
 
     public async Task<UserDto> Update(UserDto userDto)
     {
-        throw new NotImplementedException();
+        var userExists = await _userRepository.Get(userDto.Id);
+
+        if (userExists == null)
+        {
+            throw new DomainExceptions("Não existe usuário com o Id informado.");
+        }
+
+        var user = _mapper.Map<User>(userDto);
+        user.Validate();
+
+        var userUpdated = await _userRepository.Update(user);
+
+        return _mapper.Map<UserDto>(userUpdated);
     }
 
     public async Task Remove(int id)
     {
-        throw new NotImplementedException();
+        await _userRepository.Remove(id);
     }
 
-    public async Task<UserDto> Get()
+    public async Task<UserDto> Get(int id)
     {
-        throw new NotImplementedException();
+        var user = await _userRepository.Get(id);
+
+        if (user == null)
+        {
+            throw new DomainExceptions("Não existe usuário com o Id informado.");
+        }
+
+        return _mapper.Map<UserDto>(user);
+    }
+    
+    public async Task<List<UserDto>> Get()
+    {
+        var allUsers = await _userRepository.Get();
+
+        return _mapper.Map<List<UserDto>>(allUsers);
     }
 
     public async Task<List<UserDto>> SearchByName(string name)
     {
-        throw new NotImplementedException();
+        var allUSer = await _userRepository.GetByName(name);
+
+        return _mapper.Map<List<UserDto>>(allUSer);
     }
 
     public async Task<List<UserDto>> SearchByEmail(string email)
     {
-        throw new NotImplementedException();
+        var allUsers = await _userRepository.SearchByEmail(email);
+
+        return _mapper.Map<List<UserDto>>(allUsers);
     }
 
     public async Task<UserDto> GetByEmail(string email)
     {
-        throw new NotImplementedException();
+        var user = await _userRepository.GetByEmail(email);
+
+        if (user == null)
+        {
+            throw new DomainExceptions("Não existe usuário com o email informado");
+        }
+
+        return _mapper.Map<UserDto>(user);
     }
 }

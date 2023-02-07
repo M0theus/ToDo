@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/matheus/dev/Todo/ToDo.Infra/ToDo.Infra.csproj": {}
+    "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj": {}
   },
   "projects": {
-    "/home/matheus/dev/Todo/ToDo.Core/ToDo.Core.csproj": {
+    "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/dev/Todo/ToDo.Core/ToDo.Core.csproj",
+        "projectUniqueName": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
         "projectName": "ToDo.Core",
-        "projectPath": "/home/matheus/dev/Todo/ToDo.Core/ToDo.Core.csproj",
+        "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/dev/Todo/ToDo.Core/obj/",
+        "outputPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,14 +62,14 @@
         }
       }
     },
-    "/home/matheus/dev/Todo/ToDo.Domain/ToDo.Domain.csproj": {
+    "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/dev/Todo/ToDo.Domain/ToDo.Domain.csproj",
+        "projectUniqueName": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
         "projectName": "ToDo.Domain",
-        "projectPath": "/home/matheus/dev/Todo/ToDo.Domain/ToDo.Domain.csproj",
+        "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/dev/Todo/ToDo.Domain/obj/",
+        "outputPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -78,8 +84,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/matheus/dev/Todo/ToDo.Core/ToDo.Core.csproj": {
-                "projectPath": "/home/matheus/dev/Todo/ToDo.Core/ToDo.Core.csproj"
+              "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
+                "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj"
               }
             }
           }
@@ -94,6 +100,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[11.4.0, )"
@@ -146,14 +156,14 @@
         }
       }
     },
-    "/home/matheus/dev/Todo/ToDo.Infra/ToDo.Infra.csproj": {
+    "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/dev/Todo/ToDo.Infra/ToDo.Infra.csproj",
+        "projectUniqueName": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj",
         "projectName": "ToDo.Infra",
-        "projectPath": "/home/matheus/dev/Todo/ToDo.Infra/ToDo.Infra.csproj",
+        "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/dev/Todo/ToDo.Infra/obj/",
+        "outputPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -168,8 +178,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/matheus/dev/Todo/ToDo.Domain/ToDo.Domain.csproj": {
-                "projectPath": "/home/matheus/dev/Todo/ToDo.Domain/ToDo.Domain.csproj"
+              "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
+                "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj"
               }
             }
           }
@@ -184,6 +194,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[11.4.0, )"

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "twFSDPb5/wJE4Ga+QJGHMHWQaAPOiQ5QrGFXcbYhuLOxWYqkUOl9G2L9RmeGkmpEGrmPASfhhWFcuQ2M+Zb3pg==",
+  "dgSpecHash": "yZJX8/BDeXEpguoQOXUrvZ55A2D88+K9Sp3WLpoOL778yDLPMwut9Kkpd+kLNyZ02mlRId6bEPpaIhgvG5WsvA==",
   "success": true,
-  "projectFilePath": "/home/matheus/dev/Todo/ToDo.API/ToDo.API.csproj",
+  "projectFilePath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.API/ToDo.API.csproj",
   "expectedPackageFiles": [
+    "/home/matheus/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/matheus/.nuget/packages/fluentvalidation/11.4.0/fluentvalidation.11.4.0.nupkg.sha512",
     "/home/matheus/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/matheus/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/matheus/.nuget/packages/microsoft.entityframeworkcore/7.0.2/microsoft.entityframeworkcore.7.0.2.nupkg.sha512",
     "/home/matheus/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.2/microsoft.entityframeworkcore.abstractions.7.0.2.nupkg.sha512",
     "/home/matheus/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.2/microsoft.entityframeworkcore.analyzers.7.0.2.nupkg.sha512",
