@@ -1,7 +1,9 @@
 using AutoMapper;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
+using ToDo.Core.Exceptions;
 using ToDo.Domain.Contracts.Repository;
+using ToDo.Domain.Models;
 
 namespace ToDo.Application.Services;
 
@@ -16,54 +18,82 @@ public class AssignmentService : IAssignmentService
         _mapper = mapper;
         _assignmentRepository = assignmentRepository;
     }
-    
+
     public async Task<AssignmentDto> Create(AssignmentDto assignmentDto)
     {
-        var assignmentExists = await _assignmentRepository.ge
+        var assignmentExists = await _assignmentRepository.GetByName(assignmentDto.Name);
+
+        if (assignmentExists != null)
+        {
+            throw new DomainExceptions("Já existe uma task com esse nome");
+        }
+
+        var assignment = _mapper.Map<Assignment>(assignmentDto);
+        assignment.Validate();
+
+        var assignmentCreate = await _assignmentRepository.Create(assignment);
+
+        return _mapper.Map<AssignmentDto>(assignmentCreate);
     }
 
-    public Task<AssignmentDto> Update(UserDto userDto)
+    public async Task<AssignmentDto> Update(AssignmentDto assignmentDto)
     {
-        throw new NotImplementedException();
+        var assignmentExists = await _assignmentRepository.GetById(assignmentDto.Id, assignmentDto.UserId);
+
+        if (assignmentExists == null)
+        {
+            throw new DomainExceptions("Não existe nenhuma task com esse Id");
+        }
+
+        var assignment = _mapper.Map<Assignment>(assignmentDto);
+        assignment.Validate();
+
+        var assignmentUpdate = await _assignmentRepository.Update(assignment);
+
+        return _mapper.Map<AssignmentDto>(assignmentUpdate);
+
     }
 
-    public Task Remove(int id)
+    public async Task Remove(int id)
     {
-        throw new NotImplementedException();
+        await _assignmentRepository.Remove(id);
     }
 
-    public Task<AssignmentDto> Get(int id)
+    public async Task<AssignmentDto> Get(int id)
     {
-        throw new NotImplementedException();
+        var assignment = await _assignmentRepository.Get(id);
+
+        if (assignment == null)
+        {
+            throw new DomainExceptions("Não existe nenhuma task com o Id informado");
+        }
+
+        return _mapper.Map<AssignmentDto>(assignment);
     }
 
-    public Task<List<AssignmentDto>> Get()
+    public async Task<List<AssignmentDto>> Get()
     {
-        throw new NotImplementedException();
+        var allAssignments = await _assignmentRepository.Get();
+
+        return _mapper.Map<List<AssignmentDto>>(allAssignments);
     }
 
-    public Task<AssignmentDto> GetByName(string name)
+    public async Task<AssignmentDto> GetByName(string name)
     {
-        throw new NotImplementedException();
+        var assignment = await _assignmentRepository.GetByName(name);
+
+        if (assignment == null)
+        {
+            throw new Exception("Não existe nenhuma task com esse nome");
+        }
+
+        return _mapper.Map<AssignmentDto>(assignment);
     }
 
-    public Task<List<AssignmentDto>> SearchByName(string name)
+    public async Task<List<AssignmentDto>> SearchByName(string name)
     {
-        throw new NotImplementedException();
-    }
+        var allAssignments = await _assignmentRepository.SearchByName(name);
 
-    public Task<List<AssignmentDto>> SearchByEmail(string email)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<AssignmentDto> GetByEmail(string email)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<AssignmentDto> GetByList(int id)
-    {
-        throw new NotImplementedException();
+        return _mapper.Map<List<AssignmentDto>>(allAssignments);
     }
 }

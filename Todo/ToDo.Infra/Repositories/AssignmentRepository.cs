@@ -23,4 +23,24 @@ public class AssignmentRepository : BaseRepository<Assignment>, IAssignmentRepos
 
         return assignmentTask.FirstOrDefault();
     }
+
+    public virtual async Task<Assignment> GetByName(string name)
+    {
+        var assignmentExists = await _context.Set<Assignment>()
+            .AsNoTracking()
+            .Where(a => a.Name == name)
+            .ToListAsync();
+
+        return assignmentExists.FirstOrDefault();
+    }
+
+    public virtual async Task<List<Assignment>> SearchByName(string name)
+    {
+        var allAssignment = await _context.Set<Assignment>()
+            .AsNoTracking()
+            .Where(a => a.Name.ToLower().Contains(name.ToLower()))
+            .ToListAsync();
+
+        return allAssignment;
+    }
 }

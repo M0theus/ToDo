@@ -2,6 +2,7 @@ namespace ToDo.Application.DTO;
 
 public class AssignmentDto
 {
+    public int Id { get; set; }
     public string Name { get; set; } = null!; //lembrar de colocar lá no notion
     public string Description { get; set; } = null!;
     public int UserId { get; set; }

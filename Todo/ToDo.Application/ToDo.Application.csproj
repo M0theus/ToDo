@@ -25,6 +25,7 @@
 
     <ItemGroup>
       <Compile Remove="Class1.cs" />
+      <Compile Remove="Interfaces\IAssignmentList.cs" />
     </ItemGroup>
 
     <ItemGroup>

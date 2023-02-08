@@ -23,4 +23,24 @@ public class AssignmentListRepository : BaseRepository<AssignmentList>, IAssignm
 
         return assignmetList.FirstOrDefault();
     }
+
+     public virtual async Task<List<AssignmentList>> SearchByName(string name)
+     {
+         var allAssignmentLists = await _context.Set<AssignmentList>()
+             .AsNoTracking()
+             .Where(a => a.Name.ToLower().Contains(name.ToLower()))
+             .ToListAsync();
+
+         return allAssignmentLists;
+     }
+
+    public async Task<AssignmentList> GetByName(string name)
+    {
+        var assignment = await _context.Set<AssignmentList>()
+            .AsNoTracking()
+            .Where(a => a.Name == name)
+            .ToListAsync();
+
+        return assignment.FirstOrDefault();
+    }
 }
