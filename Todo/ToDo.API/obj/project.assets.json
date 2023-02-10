@@ -543,6 +543,26 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
+      "ToDo.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "FluentValidation": "11.4.0",
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.2",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.2",
+          "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
+          "ToDo.Core": "1.0.0",
+          "ToDo.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ToDo.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToDo.Application.dll": {}
+        }
+      },
       "ToDo.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1471,6 +1491,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "ToDo.Application/1.0.0": {
+      "type": "project",
+      "path": "../ToDo.Application/ToDo.Application.csproj",
+      "msbuildProject": "../ToDo.Application/ToDo.Application.csproj"
+    },
     "ToDo.Core/1.0.0": {
       "type": "project",
       "path": "../ToDo.Core/ToDo.Core.csproj",
@@ -1498,6 +1523,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2",
       "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3",
+      "ToDo.Application >= 1.0.0",
       "ToDo.Infra >= 1.0.0"
     ]
   },
@@ -1526,6 +1552,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Application/ToDo.Application.csproj": {
+              "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Application/ToDo.Application.csproj"
+            },
             "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj": {
               "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj"
             }

@@ -25,7 +25,13 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ToDo.Application\ToDo.Application.csproj" />
       <ProjectReference Include="..\ToDo.Infra\ToDo.Infra.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="WeatherForecast.cs" />
+      <Compile Remove="Controllers\WeatherForecastController.cs" />
     </ItemGroup>
 
 </Project>
