@@ -151,7 +151,7 @@ public class UserController : ControllerBase
 
     [HttpGet]
     [Route("api/v1/users/get-by-email")]
-    public async Task<IActionResult> GetByEmail([FromQuery] string email)
+    public async Task<IActionResult> GetByEmail([FromQuery] string email) 
     {
         try
         {
@@ -172,6 +172,68 @@ public class UserController : ControllerBase
                 Message = "Usuário encontrado com sucesso",
                 Success = true,
                 Data = user
+            });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(Responses.DomainErrorMenssage(ex.Message));
+        }
+    }
+
+    [HttpGet]
+    [Route("api/v1/users/search-by-email")]
+    public async Task<IActionResult> SearchByEmail(string email) //erro quando não encontra nenhum usuário
+    {
+        try
+        {
+            var users = await _userService.SearchByEmail(email);
+
+            if (users == null)
+            {
+                return Ok(new ResultViewModels
+                {
+                    Message = "Nenhum usuário com o email informado foi encontrado.",
+                    Success = true,
+                    Data = users
+                });
+            }
+
+            return Ok(new ResultViewModels
+            {
+                Message = "Usuários encontrados com sucesso.",
+                Success = true,
+                Data = users
+            });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(Responses.DomainErrorMenssage(ex.Message));
+        }
+    }
+
+    [HttpGet]
+    [Route("api/v1/users/search-by-name")]
+    public async Task<IActionResult> SearchByName(string name) //essa desgraça não está prestando ;-;
+    {
+        try
+        {
+            var users = await _userService.SearchByName(name);
+
+            if (name == null)
+            {
+                return Ok(new ResultViewModels
+                {
+                    Message = "Nenhum usuário foi encontrado com o nome informado",
+                    Success = true,
+                    Data = users
+                });
+            }
+
+            return Ok(new ResultViewModels
+            {
+                Message = "Usuário encontrado com sucesso",
+                Success = true,
+                Data = users
             });
         }
         catch (Exception ex)
