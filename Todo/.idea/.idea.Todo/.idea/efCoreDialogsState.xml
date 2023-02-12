@@ -5,6 +5,7 @@
       <map>
         <entry key="Common:3bb9677b-436a-4e1e-a127-d0440496e9db:dbContext" value="ToDo.Infra.Context.ToDoContext" />
         <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:dbContext" value="ToDo.Infra.Context.ToDoContext" />
         <entry key="Common:noBuild" value="false" />
         <entry key="Common:outputFolder" value="Migrations" />
         <entry key="Common:useDefaultConnection" value="true" />

@@ -1,9 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ToDo.API.ViewModels;
+namespace ToDo.API.ViewModels.UserViewModel;
 
-public class CreateUserViewModel
+public class UpdateUserViewModel
 {
+    [Required(ErrorMessage = "O Id não pode ser vazio.")]
+    [MinLength(1, ErrorMessage = "O Id não pode ser menor que 1")]
+    public int Id { get; set; }
+    
     [Required(ErrorMessage = "O nome não pode ser nulo")]
     [MinLength(2, ErrorMessage = "O nome deve ter no mínimo 2 caracteres")]
     [MaxLength(20, ErrorMessage = "O nome deve ter no máxmo 20 caracteres")]

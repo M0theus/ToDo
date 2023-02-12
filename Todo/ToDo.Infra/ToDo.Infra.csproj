@@ -25,6 +25,9 @@
 
     <ItemGroup>
       <Compile Remove="Class1.cs" />
+      <Compile Remove="Migrations\20230206171607_Initial.cs" />
+      <Compile Remove="Migrations\20230206171607_Initial.Designer.cs" />
+      <Compile Remove="Migrations\ToDoContextModelSnapshot.cs" />
     </ItemGroup>
 
     <ItemGroup>

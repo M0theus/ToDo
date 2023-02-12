@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj": {}
+    "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj": {}
   },
   "projects": {
-    "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
+    "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
+        "projectUniqueName": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
         "projectName": "ToDo.Core",
-        "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
+        "projectPath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/obj/",
+        "outputPath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -49,7 +49,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,18 +59,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
+    "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
+        "projectUniqueName": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
         "projectName": "ToDo.Domain",
-        "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
+        "projectPath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/obj/",
+        "outputPath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -84,8 +85,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
-                "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Core/ToDo.Core.csproj"
+              "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
+                "projectPath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Core/ToDo.Core.csproj"
               }
             }
           }
@@ -143,7 +144,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -152,18 +154,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj": {
+    "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj",
+        "projectUniqueName": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj",
         "projectName": "ToDo.Infra",
-        "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj",
+        "projectPath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Infra/obj/",
+        "outputPath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Infra/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -178,8 +180,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
-                "projectPath": "/home/matheus/Documentos/GitHub/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj"
+              "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
+                "projectPath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj"
               }
             }
           }
@@ -237,7 +239,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -246,7 +249,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }
