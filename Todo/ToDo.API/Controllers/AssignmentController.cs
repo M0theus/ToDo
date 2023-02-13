@@ -26,9 +26,9 @@ public class AssignmentController : ControllerBase
     {
         try
         {
-            var userDto = _mapper.Map<AssignmentDto>(assignmentViewModel);
+            var assignmentDto = _mapper.Map<AssignmentDto>(assignmentViewModel);
 
-            var userCreated = await _assignmentService.Create(userDto);
+            var userCreated = await _assignmentService.Create(assignmentDto);
 
             return Ok(new ResultViewModels
             {

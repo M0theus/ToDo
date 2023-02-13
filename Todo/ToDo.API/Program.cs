@@ -1,6 +1,8 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using ToDo.API.ViewModels;
+using ToDo.API.ViewModels.AssigmentViewModel;
+using ToDo.API.ViewModels.AssignmentListViewModel;
 using ToDo.API.ViewModels.UserViewModel;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
@@ -16,13 +18,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 var autoMapperConfig = new MapperConfiguration(cfg =>
 {
+    //user
     cfg.CreateMap<User, UserDto>().ReverseMap();
     cfg.CreateMap<UserDto, UpdateUserViewModel>().ReverseMap();
     //cfg.CreateMap<User, GetUserDTO>().ReverseMap();
     // cfg.CreateMap<User, UpdatedUserDTO>().ReverseMap();
     cfg.CreateMap<CreateUserViewModel, UserDto>().ReverseMap();
     //cfg.CreateMap<UpdateUserViewModel, UserDto>().ReverseMap();
-    //cfg.CreateMap<UpdateUserViewModel, UpdatedUserDto>().ReverseMap();
+    //cfg.CreateMap<UpdateUserViewModel, UpdatedUserDto>().ReverseMap();  
+    
+    //assignment
+    cfg.CreateMap<Assignment, AssignmentDto>().ReverseMap();
+    cfg.CreateMap<AssignmentDto, UpdateUserViewModel>().ReverseMap();
+    cfg.CreateMap<CreateAssignmentViewModel, AssignmentDto>().ReverseMap();
 });
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
@@ -39,13 +47,24 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 autoMapperConfig = new MapperConfiguration(cfg =>
 {
+    //user
     cfg.CreateMap<User, UserDto>().ReverseMap();
-    //cfg.CreateMap<UserDto, UpdateUserViewModel>().ReverseMap();
+    cfg.CreateMap<UserDto, UpdateUserViewModel>().ReverseMap();
     //cfg.CreateMap<User, GetUserDTO>().ReverseMap();
     // cfg.CreateMap<User, UpdatedUserDTO>().ReverseMap();
     cfg.CreateMap<CreateUserViewModel, UserDto>().ReverseMap();
     //cfg.CreateMap<UpdateUserViewModel, UserDTO>().ReverseMap();
     //cfg.CreateMap<UpdateUserViewModel, UpdatedUserDTO>().ReverseMap();
+    
+    //assignment
+    cfg.CreateMap<Assignment, AssignmentDto>().ReverseMap();
+    //cfg.CreateMap<AssignmentDto, UpdateAssignmentViewModel>().ReverseMap();
+    cfg.CreateMap<CreateAssignmentViewModel, AssignmentDto>().ReverseMap();
+    
+    //assignmentList
+    cfg.CreateMap<AssignmentList, AssignmentListDto>().ReverseMap();
+    //cfg.CreateMap<AssignmentListDto, UpdateAssignmentListViewModel>().ReverseMap();
+    cfg.CreateMap<CreateAssignmentListViewModel, AssignmentDto>().ReverseMap();
 });
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
