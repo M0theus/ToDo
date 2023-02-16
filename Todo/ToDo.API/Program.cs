@@ -1,5 +1,8 @@
+using System.Text;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ToDo.API.ViewModels;
 using ToDo.API.ViewModels.AssigmentViewModel;
 using ToDo.API.ViewModels.AssignmentListViewModel;
@@ -74,6 +77,30 @@ builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+#endregion
+
+#region Jwt
+
+var key = Encoding.ASCII.GetBytes(secretKey);
+builder.Services
+    .AddAuthentication(x =>
+    {
+        x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    }) 
+    .AddJwtBearer(x =>
+    {
+        x.RequireHttpsMetadata = false;
+        x.SaveToken = true;
+        x.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
 
 #endregion
 
