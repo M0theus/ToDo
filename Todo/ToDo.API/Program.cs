@@ -9,6 +9,7 @@ using ToDo.API.ViewModels.AssigmentViewModel;
 using ToDo.API.ViewModels.AssignmentListViewModel;
 using ToDo.API.ViewModels.Token;
 using ToDo.API.ViewModels.UserViewModel;
+using ToDo.Application.Configuration;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
 using ToDo.Application.Services;
@@ -26,16 +27,17 @@ var autoMapperConfig = new MapperConfiguration(cfg =>
     //user
     cfg.CreateMap<User, UserDto>().ReverseMap();
     cfg.CreateMap<UserDto, UpdateUserViewModel>().ReverseMap();
-    //cfg.CreateMap<User, GetUserDTO>().ReverseMap();
-    // cfg.CreateMap<User, UpdatedUserDTO>().ReverseMap();
     cfg.CreateMap<CreateUserViewModel, UserDto>().ReverseMap();
-    //cfg.CreateMap<UpdateUserViewModel, UserDto>().ReverseMap();
-    //cfg.CreateMap<UpdateUserViewModel, UpdatedUserDto>().ReverseMap();  
-    
+
     //assignment
     cfg.CreateMap<Assignment, AssignmentDto>().ReverseMap();
-    cfg.CreateMap<AssignmentDto, UpdateUserViewModel>().ReverseMap();
+    cfg.CreateMap<AssignmentDto, UpdateAssignmentViewModel>().ReverseMap();
     cfg.CreateMap<CreateAssignmentViewModel, AssignmentDto>().ReverseMap();
+    
+    //assignmentList
+    cfg.CreateMap<AssignmentList, AssignmentListDto>().ReverseMap();
+    cfg.CreateMap<AssignmentListDto, UpdateListViewModel>().ReverseMap();
+    cfg.CreateMap<CreateAssignmentListViewModel, AssignmentListDto>().ReverseMap();
     
     //login
     cfg.CreateMap<LoginUserDto, LoginViewModel>().ReverseMap();
@@ -43,8 +45,17 @@ var autoMapperConfig = new MapperConfiguration(cfg =>
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
 
+//user
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+//assignment
+builder.Services.AddScoped<IAssignmentService, AssignmentService>();
+builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
+
+//assignmentList
+builder.Services.AddScoped<IAssignmentListService, AssignmentListService>();
+builder.Services.AddScoped<IAssignmentListRepository, AssignmentListRepository>();
 
 //token
 builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
@@ -54,9 +65,7 @@ builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
 
 #region Jwt
 
-string secretKey = "dGVzdGUgYWRtaW4=";
-
-var key = Encoding.ASCII.GetBytes(secretKey);
+var key = Encoding.ASCII.GetBytes(Settings.Secret);
 builder.Services
     .AddAuthentication(x =>
     {

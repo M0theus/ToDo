@@ -4,6 +4,7 @@ using System.Text;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using ToDo.Application.Configuration;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
 using ToDo.Core.Exceptions;
@@ -110,10 +111,8 @@ public class UserService : IUserService
 
     private static string GenerateToken(User user)
     {
-        string secretKey = "dGVzdGUgYWRtaW4=";
-        
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(secretKey);
+        var key = Encoding.ASCII.GetBytes(Settings.Secret);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new Claim[]

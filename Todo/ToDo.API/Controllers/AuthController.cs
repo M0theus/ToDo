@@ -6,6 +6,7 @@ using ToDo.API.ViewModels;
 using ToDo.API.ViewModels.Token;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
+using ToDo.Core.Exceptions;
 
 namespace ToDo.API.Controllers;
 
@@ -38,10 +39,13 @@ public class AuthController : ControllerBase
                 Data = token
             });
         }
-        catch (Exception e)
+        catch (DomainExceptions exceptions)
         {
-            Console.WriteLine(e);
-            throw;
+            return BadRequest(Responses.DomainErrorMenssage(exceptions.Message));
+        }
+        catch (Exception)
+        {
+            return StatusCode(401, Responses.ApplicartionErrorMensage());
         }
     }
 }

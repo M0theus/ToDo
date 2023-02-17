@@ -16,6 +16,7 @@ public class UpdateUserViewModel
     [Required(ErrorMessage = "O Email não pode ser nulo")]
     [MinLength(3, ErrorMessage = "O email deve conter no mínimo 3 caracteres")]
     [MaxLength(255, ErrorMessage = "A senha deve ter no máximo 255 caracteres")]
+    [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "O email do usuário deve ser válido")]
     public string Email { get; set; } = null!;
     
     [Required(ErrorMessage = "A senha não pode ser nula")]
