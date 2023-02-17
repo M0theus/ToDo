@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDo.API.Utilities;
 using ToDo.API.ViewModels;
@@ -75,7 +76,8 @@ public class UserController : ControllerBase
             return StatusCode(500, Responses.ApplicartionErrorMensage());
         }
     }
-
+    
+    [Authorize]
     [HttpDelete]
     [Route("ap1/v1/users/remove{id}")]
     public async Task<IActionResult> Delete(int id)

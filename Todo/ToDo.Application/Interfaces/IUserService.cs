@@ -13,4 +13,5 @@ public interface IUserService
     Task<List<UserDto>> SearchByName(string name);
     Task<List<UserDto>> SearchByEmail(string email);
     Task<UserDto> GetByEmail(string email);
+    Task<AuthenticatedUserDto> Authenticade(LoginUserDto loginUserDto);
 } 

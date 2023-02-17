@@ -3,9 +3,11 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using ToDo.API.Token;
 using ToDo.API.ViewModels;
 using ToDo.API.ViewModels.AssigmentViewModel;
 using ToDo.API.ViewModels.AssignmentListViewModel;
+using ToDo.API.ViewModels.Token;
 using ToDo.API.ViewModels.UserViewModel;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
@@ -34,53 +36,25 @@ var autoMapperConfig = new MapperConfiguration(cfg =>
     cfg.CreateMap<Assignment, AssignmentDto>().ReverseMap();
     cfg.CreateMap<AssignmentDto, UpdateUserViewModel>().ReverseMap();
     cfg.CreateMap<CreateAssignmentViewModel, AssignmentDto>().ReverseMap();
+    
+    //login
+    cfg.CreateMap<LoginUserDto, LoginViewModel>().ReverseMap();
 });
 
 builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
 
-//builder.Services.AddSingleton(d => builder.Configuration);
-//builder.Services.AddDbContext<dbCrudUsuarioContext>(options => options.UseMySql("server=localhost;port=3306;User Id=root;database=dbCrudUser;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.30-mysql")));
-
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-#endregion
-
-#region Mapper
-
-autoMapperConfig = new MapperConfiguration(cfg =>
-{
-    //user
-    cfg.CreateMap<User, UserDto>().ReverseMap();
-    cfg.CreateMap<UserDto, UpdateUserViewModel>().ReverseMap();
-    //cfg.CreateMap<User, GetUserDTO>().ReverseMap();
-    // cfg.CreateMap<User, UpdatedUserDTO>().ReverseMap();
-    cfg.CreateMap<CreateUserViewModel, UserDto>().ReverseMap();
-    //cfg.CreateMap<UpdateUserViewModel, UserDTO>().ReverseMap();
-    //cfg.CreateMap<UpdateUserViewModel, UpdatedUserDTO>().ReverseMap();
-    
-    //assignment
-    cfg.CreateMap<Assignment, AssignmentDto>().ReverseMap();
-    //cfg.CreateMap<AssignmentDto, UpdateAssignmentViewModel>().ReverseMap();
-    cfg.CreateMap<CreateAssignmentViewModel, AssignmentDto>().ReverseMap();
-    
-    //assignmentList
-    cfg.CreateMap<AssignmentList, AssignmentListDto>().ReverseMap();
-    //cfg.CreateMap<AssignmentListDto, UpdateAssignmentListViewModel>().ReverseMap();
-    cfg.CreateMap<CreateAssignmentListViewModel, AssignmentDto>().ReverseMap();
-});
-
-builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
-
-//builder.Services.AddSingleton(d => builder.Configuration);
-//builder.Services.AddDbContext<dbCrudUsuarioContext>(options => options.UseMySql("server=localhost;port=3306;User Id=root;database=dbCrudUser;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.30-mysql")));
-
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+//token
+builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
 
 #endregion
+
 
 #region Jwt
+
+string secretKey = "dGVzdGUgYWRtaW4=";
 
 var key = Encoding.ASCII.GetBytes(secretKey);
 builder.Services
@@ -135,6 +109,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
