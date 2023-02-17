@@ -3,8 +3,8 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using ToDo.API.Token;
-using ToDo.API.ViewModels;
 using ToDo.API.ViewModels.AssigmentViewModel;
 using ToDo.API.ViewModels.AssignmentListViewModel;
 using ToDo.API.ViewModels.Token;
@@ -104,6 +104,34 @@ builder.Services.AddDbContext<ToDoContext>(options =>
         .LogTo(Console.WriteLine, LogLevel.Information)
         .EnableSensitiveDataLogging()
         .EnableDetailedErrors();
+});
+    
+//BEARER    
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Por favor ultilize Bearer <Token>",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+    
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement{
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
 });
 
 
