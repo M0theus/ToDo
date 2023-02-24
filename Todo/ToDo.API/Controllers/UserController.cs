@@ -132,7 +132,7 @@ public class UserController : ControllerBase
 
     [HttpGet]
     [Route("api/v1/users/get-all")]
-    public async Task<IActionResult> get()
+    public async Task<IActionResult> Get()
     {
         try
         {

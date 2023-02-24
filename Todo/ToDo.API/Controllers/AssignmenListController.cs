@@ -21,7 +21,7 @@ public class AssignmentListController : ControllerBase
     }
 
     [HttpPost]
-    [Route("api/v1/assignmentList/creat")] //deve estrar com erro
+    [Route("api/v1/assignmentList/create")] //deve estrar com erro
     public async Task<IActionResult> Create([FromBody] CreateAssignmentListViewModel assignmentListViewModel)
     {
         try
@@ -71,7 +71,7 @@ public class AssignmentListController : ControllerBase
     {
         try
         {
-            var assignmetList = _assignmentListService.GetByName(name, userId);
+            var assignmetList = await _assignmentListService.GetByName(name, userId);
 
             if (assignmetList == null)
             {
@@ -88,6 +88,37 @@ public class AssignmentListController : ControllerBase
                 Message = "AssignmentList foi encontrado com sucesso",
                 Success = true,
                 Data = assignmetList
+            });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(Responses.DomainErrorMenssage(ex.Message));
+        }
+    }
+
+    [HttpGet]
+    [Route("api/v1/assignmentList/get{id}")]
+    public async Task<IActionResult> Get(int id, int userId)
+    {
+        try
+        {
+            var assignmentList = await _assignmentListService.GetById(id, userId);
+
+            if (assignmentList == null)
+            {
+                return Ok(new ResultViewModels
+                {
+                    Message = "Nenhuma AssignmentList foi encontrada com o Id informado.",
+                    Success = true,
+                    Data = assignmentList
+                });
+            }
+
+            return Ok(new ResultViewModels
+            {
+                Message = "AssignmentList encontrada com sucesso",
+                Success = true,
+                Data = assignmentList
             });
         }
         catch (Exception ex)

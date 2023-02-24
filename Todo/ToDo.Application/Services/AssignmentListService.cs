@@ -75,4 +75,16 @@ public class AssignmentListService : IAssignmentListService
     { 
         await _assignmentListRepository.Remove(id);
     }
+
+    public async Task<AssignmentListDto> GetById(int id, int userId)
+    {
+        var assignmentList = await _assignmentListRepository.GetById(id, userId);
+
+        if (assignmentList == null)
+        {
+            throw new DomainExceptions("Não existe AssignmentList com o Id informado");
+        }
+
+        return _mapper.Map<AssignmentListDto>(assignmentList);
+    }
 }
