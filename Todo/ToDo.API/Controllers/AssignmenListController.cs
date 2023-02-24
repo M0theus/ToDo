@@ -126,4 +126,35 @@ public class AssignmentListController : ControllerBase
             return BadRequest(Responses.DomainErrorMenssage(ex.Message));
         }
     }
+
+    [HttpGet]
+    [Route("api/v1/assignmentList/get-all")]
+    public async Task<IActionResult> GetAll(int userId)
+    {
+        try
+        {
+            var assignmentList = await _assignmentListService.GetAll(userId);
+
+            if (assignmentList == null)
+            {
+                return Ok(new ResultViewModels
+                {
+                    Message = "Nenhuma AssignmentList foi encontrada com o userId informado",
+                    Success = true,
+                    Data = assignmentList
+                });
+            }
+
+            return Ok(new ResultViewModels
+            {
+                Message = "AssignmentLists encontradas com sucesso!",
+                Success = true,
+                Data = assignmentList
+            });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(Responses.DomainErrorMenssage(ex.Message));
+        }
+    }
 }

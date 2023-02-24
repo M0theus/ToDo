@@ -87,4 +87,11 @@ public class AssignmentListService : IAssignmentListService
 
         return _mapper.Map<AssignmentListDto>(assignmentList);
     }
+
+    public async Task<List<AssignmentListDto>> GetAll(int userId)
+    {
+        var assignmentLists = await _assignmentListRepository.GetAll(userId);
+
+        return _mapper.Map<List<AssignmentListDto>>(assignmentLists);
+    }
 }

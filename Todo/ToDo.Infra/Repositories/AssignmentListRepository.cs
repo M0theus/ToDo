@@ -28,7 +28,7 @@ public class AssignmentListRepository : BaseRepository<AssignmentList>, IAssignm
      {
          var allAssignmentLists = await _context.Set<AssignmentList>()
              .AsNoTracking()
-             .Where(a => a.Name.ToLower().Contains(name.ToLower()))
+             .Where(al => al.Name.ToLower().Contains(name.ToLower()))
              .ToListAsync();
 
          return allAssignmentLists;
@@ -36,11 +36,21 @@ public class AssignmentListRepository : BaseRepository<AssignmentList>, IAssignm
 
     public async Task<AssignmentList> GetByName(string name, int userId)
     {
-        var assignment = await _context.Set<AssignmentList>()
+        var assignmentLists = await _context.Set<AssignmentList>()
             .AsNoTracking()
-            .Where(a => a.Name == name && a.UserId == userId)
+            .Where(al => al.Name == name && al.UserId == userId)
             .ToListAsync();
 
-        return assignment.FirstOrDefault();
-    } 
+        return assignmentLists.FirstOrDefault();
+    }
+
+    public async Task<List<AssignmentList>> GetAll(int userId)
+    {
+        var assignmentLists = await _context.Set<AssignmentList>()
+            .AsNoTracking()
+            .Where(al => al.UserId == userId)
+            .ToListAsync();
+
+        return assignmentLists;
+    }
 }
