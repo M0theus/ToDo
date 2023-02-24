@@ -136,7 +136,7 @@ public class UserController : ControllerBase
     {
         try
         {
-            var allUsers = await _userService.Get();
+             var allUsers= await _userService.Get();
 
             return Ok(new ResultViewModels
             {

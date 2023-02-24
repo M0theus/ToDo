@@ -4,6 +4,9 @@ namespace ToDo.API.ViewModels.AssignmentListViewModel;
 
 public class CreateAssignmentListViewModel
 {
+    [Required(ErrorMessage = "O UserId não pode ser nulo")]
+    public int UserId { get; set; }
+    
     [Required(ErrorMessage = "O nome não pode ser nulo")]
     [MinLength(3, ErrorMessage = "O nome deve ter no mínimo 3 caracteres")]
     [MaxLength(255, ErrorMessage = "O nome deve ter no máximo 255 caracteres")]

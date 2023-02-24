@@ -237,3 +237,11 @@
 /home/matheus/Documentos/GitHub/ToDo2/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/matheus/Documentos/GitHub/ToDo2/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /home/matheus/Documentos/GitHub/ToDo2/Todo/ToDo.API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll

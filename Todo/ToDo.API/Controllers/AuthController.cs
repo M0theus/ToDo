@@ -1,6 +1,5 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ToDo.API.Token;
 using ToDo.API.Utilities;
 using ToDo.API.ViewModels;
 using ToDo.API.ViewModels.Token;

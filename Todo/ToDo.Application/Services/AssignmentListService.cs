@@ -22,7 +22,7 @@ public class AssignmentListService : IAssignmentListService
     {
         var assignmentListExists = await _assignmentListRepository.SearchByName(assignmentListDto.Name);
 
-        if (assignmentListExists != null)
+        if (assignmentListExists == null) //tá bugado kakkakaka
         {
             throw new DomainExceptions("Já existe uma lista com o nome informado");
         }
@@ -37,8 +37,7 @@ public class AssignmentListService : IAssignmentListService
 
     public async Task<AssignmentListDto> Update(AssignmentListDto assignmentListDto)
     {
-        var assignmenListExists =
-            await _assignmentListRepository.GetById(assignmentListDto.Id, assignmentListDto.UserId);
+        var assignmenListExists = await _assignmentListRepository.GetById(assignmentListDto.Id, assignmentListDto.UserId);
 
         if (assignmenListExists == null)
         {
@@ -53,9 +52,9 @@ public class AssignmentListService : IAssignmentListService
         return _mapper.Map<AssignmentListDto>(assignmentListUpdate);
     }
 
-    public async Task<AssignmentListDto> GetByName(string name)
+    public async Task<AssignmentListDto> GetByName(string name, int userId)
     {
-        var assignmetList = await _assignmentListRepository.GetByName(name);
+        var assignmetList = await _assignmentListRepository.GetByName(name, userId);
 
         if (assignmetList == null)
         {

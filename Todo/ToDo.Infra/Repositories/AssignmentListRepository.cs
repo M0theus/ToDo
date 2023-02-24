@@ -34,13 +34,13 @@ public class AssignmentListRepository : BaseRepository<AssignmentList>, IAssignm
          return allAssignmentLists;
      }
 
-    public async Task<AssignmentList> GetByName(string name)
+    public async Task<AssignmentList> GetByName(string name, int userId)
     {
         var assignment = await _context.Set<AssignmentList>()
             .AsNoTracking()
-            .Where(a => a.Name == name)
+            .Where(a => a.Name == name && a.UserId == userId)
             .ToListAsync();
 
         return assignment.FirstOrDefault();
-    }
+    } 
 }

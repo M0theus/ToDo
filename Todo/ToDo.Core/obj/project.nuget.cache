@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nz0BERzxgDEYR4SgVbdpS499pnPNv+Qs9JgN80sIv9TGXiVRWwfOwZ8JK+UdkCkjdNUIgTfHVJxAznmt2juwog==",
+  "dgSpecHash": "nbR6Bo/iQT0vY3oezmDo17+SEbV3XaIOf9EkwLrlWAU0ECozPtpeXeILLhzHTdZziwOcQmkODjg4aAObhQY75g==",
   "success": true,
-  "projectFilePath": "/home/matheus/Documentos/GitHub/ToDo2/Todo/ToDo.Core/ToDo.Core.csproj",
+  "projectFilePath": "/home/matheus/ToDo-GitClone/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
   "expectedPackageFiles": [
     "/home/matheus/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/matheus/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.14/microsoft.aspnetcore.authentication.jwtbearer.6.0.14.nupkg.sha512",
