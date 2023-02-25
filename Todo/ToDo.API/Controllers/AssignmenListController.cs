@@ -5,6 +5,7 @@ using ToDo.API.ViewModels;
 using ToDo.API.ViewModels.AssignmentListViewModel;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
+using ToDo.Core.Exceptions;
 
 namespace ToDo.API.Controllers;
 
@@ -43,9 +44,36 @@ public class AssignmentListController : ControllerBase
             return BadRequest(Responses.DomainErrorMenssage(ex.Message));
         }
     }
-    
+
+    [HttpPut]
+    [Route("api/v1/assignmentList/update")]
+    public async Task<IActionResult> Update([FromBody] UpdateListViewModel assignmentListViewModel)
+    {
+        try
+        {
+            var assignmentListDto = _mapper.Map<AssignmentListDto>(assignmentListViewModel);
+
+            var assignmentListUpdate = await _assignmentListService.Update(assignmentListDto);
+
+            return Ok(new ResultViewModels
+            {
+                Message = "AssignmentList atualizado com sucesso.",
+                Success = true,
+                Data = assignmentListUpdate
+            });
+        }
+        catch (DomainExceptions ex)
+        {
+            return BadRequest(Responses.DomainErrorMessage(ex.Message, ex.Errors));
+        }
+        catch (Exception)
+        {
+            return StatusCode(500, Responses.ApplicartionErrorMensage());
+        }
+    }
+
     [HttpDelete]
-    [Route("ap1/v1/assignmentList/remove{id}")]
+    [Route("api/v1/assignmentList/remove{id}")]
     public async Task<IActionResult> Delete(int id)
     {
         try
@@ -129,7 +157,7 @@ public class AssignmentListController : ControllerBase
 
     [HttpGet]
     [Route("api/v1/assignmentList/get-all")]
-    public async Task<IActionResult> GetAll(int userId)
+    public async Task<IActionResult> GetAll(int userId) //erro quando passa um Id errado, retorna como certo!
     {
         try
         {
@@ -150,6 +178,37 @@ public class AssignmentListController : ControllerBase
                 Message = "AssignmentLists encontradas com sucesso!",
                 Success = true,
                 Data = assignmentList
+            });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(Responses.DomainErrorMenssage(ex.Message));
+        }
+    }
+
+    [HttpGet]
+    [Route("api/v1/assignmentList/search-by-name")]
+    public async Task<IActionResult> SearchByName(string name) //tem que ser somente do usuario!
+    {
+        try
+        {
+            var assignmentLists = await _assignmentListService.SearchByName(name);
+            
+            if (assignmentLists == null)
+            {
+                return Ok(new ResultViewModels
+                {
+                    Message = "Nenhum usuário com o email informado foi encontrado.",
+                    Success = true,
+                    Data = assignmentLists
+                });
+            }
+
+            return Ok(new ResultViewModels
+            {
+                Message = "Usuários encontrados com sucesso.",
+                Success = true,
+                Data = assignmentLists
             });
         }
         catch (Exception ex)

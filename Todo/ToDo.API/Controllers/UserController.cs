@@ -50,7 +50,7 @@ public class UserController : ControllerBase
         }
     }
 
-    [HttpPut] //essa desgrça tá dando erro, olhar depois '-'
+    [HttpPut] 
     [Route("api/v1/users/update")]
     public async Task<IActionResult> Update([FromBody] UpdateUserViewModel userViewModel)
     {
@@ -80,7 +80,7 @@ public class UserController : ControllerBase
     [Authorize]
     [HttpDelete]
     [Route("ap1/v1/users/remove{id}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(int id) //só posso remover o usuario que está logado
     {
         try
         {
