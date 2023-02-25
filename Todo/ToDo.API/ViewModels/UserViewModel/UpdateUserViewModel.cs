@@ -5,7 +5,6 @@ namespace ToDo.API.ViewModels.UserViewModel;
 public class UpdateUserViewModel
 {
     [Required(ErrorMessage = "O Id não pode ser vazio.")]
-    [MinLength(1, ErrorMessage = "O Id não pode ser menor que 1")]
     public int Id { get; set; }
     
     [Required(ErrorMessage = "O nome não pode ser nulo")]
