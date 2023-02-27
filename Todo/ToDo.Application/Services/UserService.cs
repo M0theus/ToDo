@@ -19,10 +19,11 @@ public class UserService : IUserService
     private readonly IUserRepository _userRepository;
     private readonly IPasswordHasher<User> _passwordHasher;
 
-    public UserService(IMapper mapper, IUserRepository userRepository)
+    public UserService(IMapper mapper, IUserRepository userRepository, IPasswordHasher<User> passwordHasher)
     {
         _mapper = mapper;
         _userRepository = userRepository;
+        _passwordHasher = passwordHasher;
     }
     
     public async Task<UserDto> Create(UserDto userDto)
@@ -35,6 +36,7 @@ public class UserService : IUserService
         }
 
         var user = _mapper.Map<User>(userDto);
+        user.Password = _passwordHasher.HashPassword(user, user.Password);
         user.Validate(); //validação de dopminio
 
         var userCreated = await _userRepository.Create(user);

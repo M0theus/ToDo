@@ -1,9 +1,11 @@
 using System.Text;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using ScottBrady91.AspNetCore.Identity;
 using ToDo.API.Token;
 using ToDo.API.ViewModels.AssigmentViewModel;
 using ToDo.API.ViewModels.AssignmentListViewModel;
@@ -62,6 +64,11 @@ builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
 
 #endregion
 
+#region Argon2
+
+builder.Services.AddScoped<IPasswordHasher<User>, Argon2PasswordHasher<User>>();
+
+#endregion
 
 #region Jwt
 
