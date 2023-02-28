@@ -14,7 +14,6 @@ public class AssignmentListController : ControllerBase
 {
     private readonly IAssignmentListService _assignmentListService;
     private readonly IMapper _mapper;
-    
     public AssignmentListController(IAssignmentListService assignmentListService, IMapper mapper)
     {
         _assignmentListService = assignmentListService;

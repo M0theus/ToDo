@@ -98,7 +98,8 @@ public class UserController : ControllerBase
             return BadRequest(Responses.DomainErrorMenssage(ex.Message));
         }
     }
-
+    
+    [Authorize]
     [HttpGet]
     [Route("api/v1/users/get{id}")]
     public async Task<IActionResult> Get(int id)
