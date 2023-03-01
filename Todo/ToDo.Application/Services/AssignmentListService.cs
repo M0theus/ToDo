@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
 using ToDo.Core.Exceptions;
@@ -11,11 +12,13 @@ public class AssignmentListService : IAssignmentListService
 {
     private readonly IMapper _mapper;
     private readonly IAssignmentListRepository _assignmentListRepository;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public AssignmentListService(IMapper mapper, IAssignmentListRepository assignmentListRepository)
+    public AssignmentListService(IMapper mapper, IAssignmentListRepository assignmentListRepository, IHttpContextAccessor httpContextAccessor)
     {
         _mapper = mapper;
         _assignmentListRepository = assignmentListRepository;
+        _httpContextAccessor = httpContextAccessor;
     }
     
     public async Task<AssignmentListDto> Create(AssignmentListDto assignmentListDto)
@@ -37,7 +40,7 @@ public class AssignmentListService : IAssignmentListService
 
     public async Task<AssignmentListDto> Update(AssignmentListDto assignmentListDto)
     {
-        var assignmenListExists = await _assignmentListRepository.GetById(assignmentListDto.Id, assignmentListDto.UserId);
+        var assignmenListExists = await _assignmentListRepository.GetById(assignmentListDto.Id, assignmentListDto.Id);
 
         if (assignmenListExists == null)
         {
@@ -93,5 +96,15 @@ public class AssignmentListService : IAssignmentListService
         var assignmentLists = await _assignmentListRepository.GetAll(userId);
 
         return _mapper.Map<List<AssignmentListDto>>(assignmentLists);
+    }
+
+    private int GenaretUserId()
+    {
+        var claim =  _httpContextAccessor?.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "Id");
+        if (claim == null)
+            return 0;
+        
+        return string.IsNullOrWhiteSpace(claim.Value) ? 0 : int.Parse(claim.Value);
+    
     }
 }

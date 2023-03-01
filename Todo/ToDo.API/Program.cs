@@ -40,8 +40,8 @@ var autoMapperConfig = new MapperConfiguration(cfg =>
     cfg.CreateMap<AssignmentList, AssignmentListDto>().ReverseMap();
     cfg.CreateMap<AssignmentListDto, UpdateListViewModel>().ReverseMap();
     cfg.CreateMap<CreateAssignmentListViewModel, AssignmentListDto>().ReverseMap();
-    
-    //login
+
+//login
     cfg.CreateMap<LoginUserDto, LoginViewModel>().ReverseMap();
 });
 
@@ -61,6 +61,9 @@ builder.Services.AddScoped<IAssignmentListRepository, AssignmentListRepository>(
 
 //token
 builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
+
+//httpContextAccessor
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 #endregion
 

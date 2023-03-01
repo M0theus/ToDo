@@ -6,6 +6,7 @@ using ToDo.API.ViewModels;
 using ToDo.API.ViewModels.UserViewModel;
 using ToDo.Application.DTO;
 using ToDo.Application.Interfaces;
+using ToDo.Application.Services;
 using ToDo.Core.Exceptions;
 
 namespace ToDo.API.Controllers;
