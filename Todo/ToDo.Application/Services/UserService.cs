@@ -54,6 +54,7 @@ public class UserService : IUserService
         }
 
         var user = _mapper.Map<User>(userDto);
+        user.Password = _passwordHasher.HashPassword(user, user.Password);
         user.Validate();
 
         var userUpdated = await _userRepository.Update(user);

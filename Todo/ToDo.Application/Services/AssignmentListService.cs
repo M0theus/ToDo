@@ -40,7 +40,7 @@ public class AssignmentListService : IAssignmentListService
 
     public async Task<AssignmentListDto> Update(AssignmentListDto assignmentListDto)
     {
-        var assignmenListExists = await _assignmentListRepository.GetById(assignmentListDto.Id, assignmentListDto.Id);
+        var assignmenListExists = await _assignmentListRepository.GetById(assignmentListDto.Id, GetUserId());
 
         if (assignmenListExists == null)
         {
@@ -81,7 +81,7 @@ public class AssignmentListService : IAssignmentListService
 
     public async Task<AssignmentListDto> GetById(int id)
     {
-        var assignmentList = await _assignmentListRepository.GetById(id, GenaretUserId());
+        var assignmentList = await _assignmentListRepository.GetById(id, GetUserId());
 
         if (assignmentList == null)
         {
@@ -93,12 +93,12 @@ public class AssignmentListService : IAssignmentListService
 
     public async Task<List<AssignmentListDto>> GetAll()
     {
-        var assignmentLists = await _assignmentListRepository.GetAll(GenaretUserId());
+        var assignmentLists = await _assignmentListRepository.GetAll(GetUserId());
 
         return _mapper.Map<List<AssignmentListDto>>(assignmentLists);
     }
 
-    private int GenaretUserId()
+    private int GetUserId()
     {
         var claim = _httpContextAccessor?.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "Id");
         if (claim == null)
