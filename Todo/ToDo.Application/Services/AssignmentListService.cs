@@ -79,9 +79,9 @@ public class AssignmentListService : IAssignmentListService
         await _assignmentListRepository.Remove(id);
     }
 
-    public async Task<AssignmentListDto> GetById(int id, int userId)
+    public async Task<AssignmentListDto> GetById(int id)
     {
-        var assignmentList = await _assignmentListRepository.GetById(id, userId);
+        var assignmentList = await _assignmentListRepository.GetById(id, GenaretUserId());
 
         if (assignmentList == null)
         {
@@ -91,20 +91,19 @@ public class AssignmentListService : IAssignmentListService
         return _mapper.Map<AssignmentListDto>(assignmentList);
     }
 
-    public async Task<List<AssignmentListDto>> GetAll(int userId)
+    public async Task<List<AssignmentListDto>> GetAll()
     {
-        var assignmentLists = await _assignmentListRepository.GetAll(userId);
+        var assignmentLists = await _assignmentListRepository.GetAll(GenaretUserId());
 
         return _mapper.Map<List<AssignmentListDto>>(assignmentLists);
     }
 
     private int GenaretUserId()
     {
-        var claim =  _httpContextAccessor?.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "Id");
+        var claim = _httpContextAccessor?.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == "Id");
         if (claim == null)
             return 0;
         
         return string.IsNullOrWhiteSpace(claim.Value) ? 0 : int.Parse(claim.Value);
-    
     }
 }

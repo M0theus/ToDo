@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDo.API.Utilities;
 using ToDo.API.ViewModels;
@@ -123,13 +124,14 @@ public class AssignmentListController : ControllerBase
         }
     }
 
+    [Authorize]
     [HttpGet]
     [Route("api/v1/assignmentList/get{id}")]
-    public async Task<IActionResult> Get(int id, int userId)
+    public async Task<IActionResult> Get(int id)
     {
         try
         {
-            var assignmentList = await _assignmentListService.GetById(id, userId);
+            var assignmentList = await _assignmentListService.GetById(id);
 
             if (assignmentList == null)
             {
@@ -153,14 +155,14 @@ public class AssignmentListController : ControllerBase
             return BadRequest(Responses.DomainErrorMenssage(ex.Message));
         }
     }
-
+    [Authorize]
     [HttpGet]
     [Route("api/v1/assignmentList/get-all")]
-    public async Task<IActionResult> GetAll(int userId) //erro quando passa um Id errado, retorna como certo!
+    public async Task<IActionResult> GetAll() //erro quando passa um Id errado, retorna como certo!
     {
         try
         {
-            var assignmentList = await _assignmentListService.GetAll(userId);
+            var assignmentList = await _assignmentListService.GetAll();
 
             if (assignmentList == null)
             {
