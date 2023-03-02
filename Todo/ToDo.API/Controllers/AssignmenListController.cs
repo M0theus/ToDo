@@ -11,6 +11,7 @@ using ToDo.Core.Exceptions;
 namespace ToDo.API.Controllers;
 
 [ApiController]
+[Authorize]
 public class AssignmentListController : ControllerBase
 {
     private readonly IAssignmentListService _assignmentListService;
@@ -123,8 +124,7 @@ public class AssignmentListController : ControllerBase
             return BadRequest(Responses.DomainErrorMenssage(ex.Message));
         }
     }
-
-    [Authorize]
+    
     [HttpGet]
     [Route("api/v1/assignmentList/get{id}")]
     public async Task<IActionResult> Get(int id)
