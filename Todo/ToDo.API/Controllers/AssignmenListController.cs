@@ -23,7 +23,7 @@ public class AssignmentListController : ControllerBase
     }
 
     [HttpPost]
-    [Route("api/v1/assignmentList/create")] //deve estrar com erro
+    [Route("api/v1/assignmentList/create")] //está com error
     public async Task<IActionResult> Create([FromBody] CreateAssignmentListViewModel assignmentListViewModel)
     {
         try
@@ -96,11 +96,11 @@ public class AssignmentListController : ControllerBase
 
     [HttpGet]
     [Route("api/v1/assignmenList/get-by-name")]
-    public async Task<IActionResult> GetByName(string name, int userId)
+    public async Task<IActionResult> GetByName(string name)
     {
         try
         {
-            var assignmetList = await _assignmentListService.GetByName(name, userId);
+            var assignmetList = await _assignmentListService.GetByName(name);
 
             if (assignmetList == null)
             {

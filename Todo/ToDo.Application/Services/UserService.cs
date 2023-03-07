@@ -37,7 +37,7 @@ public class UserService : IUserService
 
         var user = _mapper.Map<User>(userDto);
         user.Password = _passwordHasher.HashPassword(user, user.Password);
-        user.Validate(); //validação de dopminio
+        user.Validate(); //validação de dominio
 
         var userCreated = await _userRepository.Create(user);
 

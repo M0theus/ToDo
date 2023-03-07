@@ -23,11 +23,11 @@ public class AssignmentListRepository : BaseRepository<AssignmentList>, IAssignm
         return assignmetList;
     }
 
-     public virtual async Task<List<AssignmentList>> SearchByName(string name)
+     public virtual async Task<List<AssignmentList>> SearchByName(string name, int userId)
      {
          var allAssignmentLists = await _context.Set<AssignmentList>()
              .AsNoTracking()
-             .Where(al => al.Name.ToLower().Contains(name.ToLower()))
+             .Where(al => al.Name.ToLower().Contains(name.ToLower()) && al.UserId == userId)
              .ToListAsync();
 
          return allAssignmentLists;
