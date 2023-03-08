@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CPK7W1dM5LYCOV6NXPWwDVO0KlqD09kxktCJv+vBCZVFGmCKbU+W0seIShRqSq44aVocg7FWiFN564zJhVZ9uA==",
+  "dgSpecHash": "kCUEftw6nwOaFHIKapU5CHmBI+MKl7BRwgEwNT4ttQSaahmA7giwPoOxePtClPZrWh6gvJhHR06gnjTOlifqOg==",
   "success": true,
-  "projectFilePath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj",
+  "projectFilePath": "/home/matheus/ToDo/Todo/ToDo.Infra/ToDo.Infra.csproj",
   "expectedPackageFiles": [
     "/home/matheus/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/matheus/.nuget/packages/fluentvalidation/11.4.0/fluentvalidation.11.4.0.nupkg.sha512",

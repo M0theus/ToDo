@@ -46,3 +46,15 @@
 /home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.dll
 /home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ref/ToDo.Core.dll
 /home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.pdb
+/home/matheus/ToDo/Todo/ToDo.Core/bin/Debug/net6.0/ToDo.Core.deps.json
+/home/matheus/ToDo/Todo/ToDo.Core/bin/Debug/net6.0/ToDo.Core.dll
+/home/matheus/ToDo/Todo/ToDo.Core/bin/Debug/net6.0/ref/ToDo.Core.dll
+/home/matheus/ToDo/Todo/ToDo.Core/bin/Debug/net6.0/ToDo.Core.pdb
+/home/matheus/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.csproj.AssemblyReference.cache
+/home/matheus/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/matheus/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.AssemblyInfoInputs.cache
+/home/matheus/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.AssemblyInfo.cs
+/home/matheus/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.csproj.CoreCompileInputs.cache
+/home/matheus/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.dll
+/home/matheus/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ref/ToDo.Core.dll
+/home/matheus/ToDo/Todo/ToDo.Core/obj/Debug/net6.0/ToDo.Core.pdb

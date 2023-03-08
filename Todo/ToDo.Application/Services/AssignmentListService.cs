@@ -48,8 +48,9 @@ public class AssignmentListService : IAssignmentListService
         {
             throw new DomainExceptions("Não existe lista com o Id informado");
         }
-
+        
         var assignmentList = _mapper.Map<AssignmentList>(assignmentListDto);
+        assignmentList.UserId = GetUserId();
         assignmentList.Validate();
 
         var assignmentListUpdate = await _assignmentListRepository.Update(assignmentList);

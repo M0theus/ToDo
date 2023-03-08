@@ -23,7 +23,7 @@ public class AssignmentListController : ControllerBase
     }
 
     [HttpPost]
-    [Route("api/v1/assignmentList/create")] //está com error
+    [Route("api/v1/assignmentList/create")]
     public async Task<IActionResult> Create([FromBody] CreateAssignmentListViewModel assignmentListViewModel)
     {
         try

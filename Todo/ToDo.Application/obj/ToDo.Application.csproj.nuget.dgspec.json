@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Application/ToDo.Application.csproj": {}
+    "/home/matheus/ToDo/Todo/ToDo.Application/ToDo.Application.csproj": {}
   },
   "projects": {
-    "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Application/ToDo.Application.csproj": {
+    "/home/matheus/ToDo/Todo/ToDo.Application/ToDo.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Application/ToDo.Application.csproj",
+        "projectUniqueName": "/home/matheus/ToDo/Todo/ToDo.Application/ToDo.Application.csproj",
         "projectName": "ToDo.Application",
-        "projectPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Application/ToDo.Application.csproj",
+        "projectPath": "/home/matheus/ToDo/Todo/ToDo.Application/ToDo.Application.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Application/obj/",
+        "outputPath": "/home/matheus/ToDo/Todo/ToDo.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -26,11 +26,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
-                "projectPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/ToDo.Core.csproj"
+              "/home/matheus/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
+                "projectPath": "/home/matheus/ToDo/Todo/ToDo.Core/ToDo.Core.csproj"
               },
-              "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
-                "projectPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj"
+              "/home/matheus/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
+                "projectPath": "/home/matheus/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj"
               }
             }
           }
@@ -109,14 +109,14 @@
         }
       }
     },
-    "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
+    "/home/matheus/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
+        "projectUniqueName": "/home/matheus/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
         "projectName": "ToDo.Core",
-        "projectPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
+        "projectPath": "/home/matheus/ToDo/Todo/ToDo.Core/ToDo.Core.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/obj/",
+        "outputPath": "/home/matheus/ToDo/Todo/ToDo.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -175,14 +175,14 @@
         }
       }
     },
-    "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
+    "/home/matheus/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
+        "projectUniqueName": "/home/matheus/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
         "projectName": "ToDo.Domain",
-        "projectPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
+        "projectPath": "/home/matheus/ToDo/Todo/ToDo.Domain/ToDo.Domain.csproj",
         "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Domain/obj/",
+        "outputPath": "/home/matheus/ToDo/Todo/ToDo.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/matheus/.nuget/NuGet/NuGet.Config"
@@ -197,8 +197,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
-                "projectPath": "/home/matheus/dev/ToDo/ToDo/Todo/ToDo.Core/ToDo.Core.csproj"
+              "/home/matheus/ToDo/Todo/ToDo.Core/ToDo.Core.csproj": {
+                "projectPath": "/home/matheus/ToDo/Todo/ToDo.Core/ToDo.Core.csproj"
               }
             }
           }
